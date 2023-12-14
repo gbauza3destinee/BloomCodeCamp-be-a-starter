@@ -1,9 +1,6 @@
 package com.hcc.entities.enums;
 
-//As a Reviewer I want to be able to click a Reject Assignment
-// As a Reviewer I want to be able to click on a claim
-// As a Reviewer I want to be able to click on a Complete assignment
-// As a Reviewer I want to be able to click a View button
+// TODO: Which annotation goes in this class?
 public enum AssignmentStatusEnum {
     PENDING_SUBMISSION("Pending Submission"),
     SUBMITTED("Submitted"),

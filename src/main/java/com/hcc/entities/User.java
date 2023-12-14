@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-// TODO: What class should I be implementing for overriden methods ?
 public class User implements UserDetails {
 
     private long id;

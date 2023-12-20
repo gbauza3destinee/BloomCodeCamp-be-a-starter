@@ -12,11 +12,11 @@ public class AssignmentController {
 
     @Autowired
     private static AssignmentRepository assignmentRepository;
+
    // The controller handles HTTP requests and is used to touch the api endpoints
 
     @GetMapping("/api/assignments")
     public static Assignment getAssignmentById(long assignmentId){
-
         Assignment assignment = assignmentRepository.getReferenceById(assignmentId);
         return assignment;
     }
@@ -28,15 +28,25 @@ public class AssignmentController {
     }
     @PutMapping("/api/assignments/{id}")
     public static boolean putAssignmentsById(long assignmentId){
+
         Assignment assignment = getAssignmentById(assignmentId);
-        assignmentRepository.save(assignment);
-        boolean isSaved = true;
-        return isSaved;
+        if( assignment == null){
+            throw new NullPointerException("Assignment could not be found by iD!");
+        }  else {
+
+            assignmentRepository.save(assignment);
+            boolean isSaved = true;
+            return isSaved;
+        }
     }
+
 
     @PostMapping("/api/assignments")
     public static boolean postAssignmentsById(long assignmentId){
         Assignment assignment = getAssignmentById(assignmentId);
+       if(assignment == null){
+           throw new NullPointerException("Assignment was not found!");
+        }
         assignmentRepository.save(assignment);
         boolean isSaved = true;
         return isSaved;

@@ -4,9 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
-// TODO: Because this is an object that repository implements,
-// I'm using JPA's entity tag to signify this will be items in a table.
-
 public class Assignment {
 
 

@@ -16,18 +16,20 @@ public class AssignmentController {
    // The controller handles HTTP requests and is used to touch the api endpoints
 
     @GetMapping("/api/assignments")
-    public static Assignment getAssignmentById(long assignmentId){
+    public static Assignment getAssignmentById(@RequestBody long assignmentId){
         Assignment assignment = assignmentRepository.getReferenceById(assignmentId);
         return assignment;
     }
-
+    // RequestBody
+    // RequestParam
+    // whats the difference between using RequestBody and Pathvariable?
     @GetMapping("/api/assignments")
-    public static Assignment getAssignmentByUser(User user){
+    public static Assignment getAssignmentByUser( @PathVariable  User user){
         Assignment assignment= assignmentRepository.getReferenceById(user.getId());
         return assignment;
     }
     @PutMapping("/api/assignments/{id}")
-    public static boolean putAssignmentsById(long assignmentId){
+    public static boolean putAssignmentsById( @PathVariable long assignmentId){
 
         Assignment assignment = getAssignmentById(assignmentId);
         if( assignment == null){
@@ -42,7 +44,7 @@ public class AssignmentController {
 
 
     @PostMapping("/api/assignments")
-    public static boolean postAssignmentsById(long assignmentId){
+    public static boolean postAssignmentsById( @PathVariable long assignmentId){
         Assignment assignment = getAssignmentById(assignmentId);
        if(assignment == null){
            throw new NullPointerException("Assignment was not found!");

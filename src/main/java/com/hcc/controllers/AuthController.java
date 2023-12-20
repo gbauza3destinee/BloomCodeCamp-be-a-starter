@@ -22,13 +22,12 @@ public class AuthController {
     // username
     // password
     // UsernamePasswordAuthenticationToken - pass in username and password
-    // pass to authnetication manager authenticate
+    // pass to authentication manager authenticate
     // authentication = authenticateManager.auth
     @PostMapping()
     public Authentication login(String username, String password){
         UsernamePasswordAuthenticationToken passwordAuthenticationToken = new UsernamePasswordAuthenticationToken(username, password);
-       Authentication authenticate = authenticationManager.authenticate(passwordAuthenticationToken);
-
+        Authentication authenticate = authenticationManager.authenticate(passwordAuthenticationToken);
         return authenticate;
     }
 

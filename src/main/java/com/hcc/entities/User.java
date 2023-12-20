@@ -51,9 +51,6 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    // TODO : Implement Login function here
-    @GetMapping("/api/auth/login")
-
 
     @Override
     public boolean isAccountNonExpired() {

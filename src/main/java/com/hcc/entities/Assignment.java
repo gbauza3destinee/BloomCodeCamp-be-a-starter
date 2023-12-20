@@ -1,5 +1,6 @@
 package com.hcc.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
@@ -9,12 +10,20 @@ import javax.persistence.Entity;
 public class Assignment {
 
 
+    @Column
     private long id;
+
+    @Column
     private String status;
+    @Column
     private Integer number;
+    @Column
     private String githubUrl;
+    @Column
     private String branch;
+    @Column
     private String reviewVideoUrl;
+    @Column
     private User user;
 
     /**

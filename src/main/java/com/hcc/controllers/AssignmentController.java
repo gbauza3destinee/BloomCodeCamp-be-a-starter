@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/")
 public class AssignmentController {
 
-    //since this handles http requests, should @getmapping only be mentioned
-    // here?
-
+   // The controller handles HTTP requests and is used to touch the api endpoints
 
     @GetMapping("/api/assignments")
     public static Assignment getAssignmentById(long assignmentId){

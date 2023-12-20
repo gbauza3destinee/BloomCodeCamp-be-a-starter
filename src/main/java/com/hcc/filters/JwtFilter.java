@@ -22,12 +22,12 @@ import org.springframework.http.HttpHeaders;
 import static org.springframework.util.ObjectUtils.isEmpty;
 
 @Component
-public class jwtFilter extends OncePerRequestFilter {
+public class JwtFilter extends OncePerRequestFilter {
     @Autowired
     private UserRepository userRepo;
 
     @Autowired
-    private jwtUtil jwtUtil;
+    private JwtUtil jwtUtil;
 
 
     @Override

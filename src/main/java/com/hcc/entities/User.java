@@ -3,12 +3,14 @@ package com.hcc.entities;
 import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
+@Entity
 public class User implements UserDetails {
 
     private long id;
@@ -48,6 +50,10 @@ public class User implements UserDetails {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    // TODO : Implement Login function here
+    @GetMapping("/api/auth/login")
+
 
     @Override
     public boolean isAccountNonExpired() {
